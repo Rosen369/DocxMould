@@ -11,12 +11,22 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestRemoval()
+        public void TestRemovePartA()
         {
         }
 
         [TestMethod]
-        public void TestReplaceAndRemoval()
+        public void TestRemovePartB()
+        {
+        }
+
+        [TestMethod]
+        public void TestReplaceAndRemovePartA()
+        {
+        }
+
+        [TestMethod]
+        public void TestReplaceAndRemovePartB()
         {
         }
     }
