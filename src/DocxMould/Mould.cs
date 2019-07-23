@@ -18,19 +18,19 @@ namespace DocxMould
 
         public void ReplaceField(Replacement replacement)
         {
-            if (this._saved) throw new AccessViolationException("Document has already saved can not continue processing!");
+            if (this._saved) throw new AccessViolationException("Document has already saved. Can not continue processing!");
             this._processor.Replace(replacement);
         }
 
         public void RemoveSection(Removal removal)
         {
-            if (this._saved) throw new AccessViolationException("Document has already saved can not continue processing!");
+            if (this._saved) throw new AccessViolationException("Document has already saved. Can not continue processing!");
             this._processor.RemoveSection(removal);
         }
 
         public void Save()
         {
-            if (this._saved) throw new AccessViolationException("Document has already saved can not continue processing!");
+            if (this._saved) return;
             this._processor.Save();
             this._saved = true;
         }
