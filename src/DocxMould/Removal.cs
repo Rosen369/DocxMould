@@ -27,13 +27,14 @@ namespace DocxMould
         public void Add(string from, string to)
         {
             var key = this.SectionKey(from);
+            var value = this.SectionKey(to);
             if (this._dict.ContainsKey(key))
             {
-                this._dict[key] = to;
+                this._dict[key] = value;
             }
             else
             {
-                this._dict.Add(key, to);
+                this._dict.Add(key, value);
             }
         }
 
@@ -58,7 +59,7 @@ namespace DocxMould
 
         private string SectionKey(string from)
         {
-            var key = MouldSettings.FieldPrefix + from + MouldSettings.FieldSuffix;
+            var key = MouldSettings.SectionPrefix + from + MouldSettings.SectionSuffix;
             return key;
         }
     }

@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DocxMould\DocxMould.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="template.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
