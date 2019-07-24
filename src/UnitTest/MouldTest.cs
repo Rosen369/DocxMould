@@ -23,6 +23,27 @@ namespace UnitTest
         }
 
         [TestMethod]
+        public void TestReplaceWithStyle()
+        {
+            using (var fs = File.Open("./template.docx", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+            using (var mould = new Mould(fs))
+            {
+                var replacement = new Replacement();
+                var style = new ReplaceStyle()
+                {
+                    StrikeThrough = true,
+                    Bold = true,
+                    FontSize = 22
+                };
+                replacement.Add("Field1", "Field1BlaBlaBla111", style);
+                replacement.Add("Field2", "Field2BlaBlaBla222");
+                replacement.Add("Field3", "Field3BlaBlaBla333");
+                mould.ReplaceField(replacement);
+                mould.Save();
+            }
+        }
+
+        [TestMethod]
         public void TestRemovePartA()
         {
             using (var fs = File.Open("./template.docx", FileMode.OpenOrCreate, FileAccess.ReadWrite))
